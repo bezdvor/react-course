@@ -1,18 +1,22 @@
 import React from 'react';
-import Navigation from './Navigation';
-import Slider from './Slider';
 
 const Header = (props) => (
     <header className="header">
-        <h1 className="page-title">Simple react blog</h1>
-        <Slider>
-            <p>React</p>
-            <p>is easy</p>
-            <p>to learn.</p>
-            <p>Use Children API for this slider.</p>
-        </Slider>
-        
-        <Navigation/>
+        <h3>Задания на сегодня:</h3>
+        <ul className="tasks">
+            <li>Вывести все посты которые лежат в state компонента MainLayout используя специально созданный для этого компонент. (2 балла)</li>
+            <li>
+                Добавить в массив, с объектами постов, свойство "description" в котором будет
+                описание каждого объекта (пример: <i>{ `{title: "react", description: "React это ... "}` }</i>) (2 балла)
+            </li>
+            <li>
+                Ограничить количество символов отображаемых в описании к посту до 120,
+                по нажатию на кнопку "show more" отобразить весь текст и добавить стили которые позволят
+                отличать развернутый компонент от свернутого. (4 балла)
+            </li>
+            <li>Создать компонент с помощью которого можно будет добавлять новый пост</li>
+            <li>Добавить возможность удалять посты</li>
+        </ul>
     </header>
 );
 

@@ -4,10 +4,6 @@
     "stage-0",
     "react"
   ],
-  "plugins": ["transform-decorators-legacy"],
-  "env": {
-    "production": {
-      "presets": ["react-optimize"]
-    }
-  }
+  "plugins": ["transform-decorators-legacy"]
+
 }

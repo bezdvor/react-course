@@ -1,29 +1,18 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 
-// BrowserRouter это основной компонент react-router'a который
-// дает нашему приложению работать с url
-import { BrowserRouter as Router } from 'react-router-dom';
-
+// благодаря настройкам webpack мы можем собирать и стили тоже.
 import '../sass/common.scss';
+
+// На текущий момент, этот компонент является основным корневым
+// компонентом в который вложены остальные компоненты.
 import MainLayout from "./containers/MainLayout";
 
-// Provider - это обертка которая позволяет всем компонентам коннектится к store и получать все необходимые
-// для работы с redux функции. Уровень вложености обязателно должен быть таким как в примере - самый корневой
-// компонент - Provider, а потом остальное, это может быть наш контейнер а может быть роутер и внутри него наш 
-// главный компонент, а в нем уже все что нам  нужно.
-import {Provider} from 'react-redux';
 
-// Cобранный store redux, он здесь нужен чтобы передать его в Provider.
-import store from './store';
+// Метод render() -> взятый из отдельного модуля от React. ReactDOM является дополнительным пакетом входящим
+// в экосистему React, которая отвечает за работу с DOM элементами, как виртуального DOM, так и настоящего ()
+ReactDOM.render(<MainLayout />, document.getElementById('app'));
 
-// 
-render(
-    <Provider store={store}>
-        <Router>
-            <MainLayout />
-        </Router>
-    </Provider>
-    , document.getElementById('app'));
-
-
+// Это корневой файл проекта, именно он будет указан в webpack как файл входа.
+// Эго особенность заключается в том что в нем осуществляется первый и последний запрос
+// к настоящему DOM и вставляется в него все наше приложение.
