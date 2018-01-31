@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uppermanis"
+    "url": "git+https://github.com/rezolan"
   },
-  "author": "Stepan Soroka",
+  "author": "Alex Kravchenko",
   "license": "MIT",
   "dependencies": {
     "react": "15.3.1",
