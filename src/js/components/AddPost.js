@@ -2,12 +2,7 @@ import React from 'react';
 
 export default class AddPost extends React.Component {
     
-    constructor(props) {
-        super(props);
-        this.handleOnSubmit = this.handleOnSubmit.bind(this);
-    }
-
-    handleOnSubmit(e) {
+    handleOnSubmit = (e) => {
         e.preventDefault();
 
         if(this.title.value.trim() !== '' || this.description.value.trim() !== '') {
