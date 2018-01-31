@@ -1,11 +1,15 @@
 import React from 'react';
 
+// Мне кажется что, чтобы у нас заработало добавление, нам нужно присоединить 
+// наш компонент к store и передать в компонент обернутуюю в dispatch функцию 
+// результат которой попадет в reducer который это обработает....... но 
+// ..но... я бы рекомендовал вам зайти в компонент в котором используется этот компонент и прочитать коментарий там
+
 export default class AddPost extends React.Component {
 
     constructor(props) {
         super(props);
-
-        this.handleOnSubmit = this.handleOnSubmit.bind(this);
+        this.handleOnSubmit = this.handleOnSubmit.bind(this); 
     }
 
     handleOnSubmit(event) {
@@ -18,7 +22,7 @@ export default class AddPost extends React.Component {
             };
 
             this.props.addPost(new_post);
-            
+
             this.refs.title.value = '';
             this.refs.description.value = '';
         }
