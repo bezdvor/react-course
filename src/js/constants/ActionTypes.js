@@ -1,4 +1,3 @@
-// Константы типов action'ов нужно писать для того чтобы не было 
-// конфликтов названий при использовании и отслеживании этих типов
-
+// Constants for action types here
 export const ADD_POST = "ADD_POST";
+export const UPDATE_CONTENT_TOGGLER = "UPDATE_CONTENT_TOGGLER";

@@ -3,15 +3,13 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
-    return { data: state.posts.find((item, index) => +index == +ownProps.match.params.postId) }
+    return { data: state.posts.find((item, index) => +index == +ownProps.match.params.id) }
 };
-
 @connect(mapStateToProps)
 export default class PostView extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.renderLinks = this.renderLinks.bind(this);
         this.renderPost = this.renderPost.bind(this);
     }
@@ -26,10 +24,11 @@ export default class PostView extends React.Component {
         if(this.props.data) {
             return (
                 <article className="post-view">
+                    
                     <header>
                         <h1 className="page-title">
                             <Link to="/" className="go-home">home</Link>
-                            {' / '+this.props.data.title}
+                            {' / ' +this.props.data.title}
                         </h1>
                     </header>
 
@@ -39,7 +38,7 @@ export default class PostView extends React.Component {
                             {this.renderLinks()}
                         </ul>
                     </main>
-                    
+
                 </article>
             );
         } else {

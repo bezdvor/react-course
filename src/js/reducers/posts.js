@@ -28,6 +28,11 @@ export default function posts(state = InitialState.posts, action) {
     switch(type) {
         case types.ADD_POST:
             return [...state, payload];
+        case types.UPDATE_CONTENT_TOGGLER:
+            return state.map((item, index) => {
+                if(index === payload) return {...item, contentToggle: !item.contentToggle}
+                else return {...item, contentToggle: false};
+            });
         default:
             return state;
     }
